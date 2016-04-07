@@ -1,0 +1,203 @@
+
+//
+// Sections
+// --------------------------------------------------
+
+#block_common_statistics {
+	border: none;
+	padding: 0px;
+	text-align: left;
+	color: red;
+	
+	table{
+			background-color: #f3f3f3;
+			border:none;
+			padding:0px;
+		td{
+			border:none;
+			background-color: #f3f3f3;
+			text-align: left;
+			padding-left:0px; 
+			padding-top: 10px;
+			color: #c1c1c1;
+			&:nth-child(2){
+				text-align: right;
+			}
+		}
+		th{
+			border:none;
+			text-align: left;
+			padding-left:0px; 
+			padding-top: 20px;
+			background-color: #f3f3f3;
+		}
+	}
+}
+
+#caption_common_statistics {
+	font-size: 17px;
+	padding-top: 0px;
+	border-bottom: 2px solid #ccc;
+	text-transform: bold;
+}
+
+#caption_blogroll{
+	font-size: 17px;
+	color:#999;
+}
+#caption_html_block{
+	color: #999;
+	font-size: 17px;
+	border-bottom: 2px solid #ccc;
+}
+#content_html_block p{
+	color: #999;
+
+}
+
+.call-to-action {
+	background: #fff;
+
+	h2 {
+
+		+ p {
+			margin-top: 30px;
+		}
+	}
+
+	p {
+		font-size: 18px;
+
+		+ p {
+			margin-top: 30px;
+		}
+	}
+
+	&--alt {
+		background: #fff;
+	}
+
+	&--center {
+		text-align: center;
+		background: #fff;
+		padding-bottom: 0;
+		border-bottom: 1px solid #ddd;
+
+		p {
+			width: 70%;
+			margin-left: auto;
+			margin-right: auto;
+
+			+ img {
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
+.b-feature {
+	text-align: center;
+}
+
+.page-index{
+	background-color: #f3f3f3;
+}
+
+//
+// Section blog
+// --------------------------------------------------
+
+.section-blog {
+
+	h2 {
+		text-align: center;
+		
+		+ .box {
+			margin-top: 30px;
+		}
+	}
+
+	#caption_blogroll {
+		display: none;
+	}
+}
+// ASIDE
+//---------------------------
+
+.aside {
+
+  .box-caption {
+    padding-bottom: 100px;
+
+    &:after {
+      display: block;
+      content: '';
+      position: static;
+      margin-top: 10px;
+      
+      width: 100%;
+      height: 2px;
+      background: #ddd;
+    }
+  }
+
+  .box-content {
+    padding-top: 0;
+  }
+}
+
+.user-avatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.account-info {
+  text-align: left;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.aside .nav-stacked {
+
+  > li {
+
+    > a {
+      padding: 5px 0;
+
+      &:hover {
+        background: none;
+      }
+    }
+
+   
+  }
+}
+
+#fast-search {
+  padding: 0 20px;
+
+  .control-group {
+    background: #f3f3f3;
+    position: relative;
+
+    input {
+      padding-right: 30px;
+    }
+
+    button {
+      background: none;
+      border: 0 none;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      top: 50%;
+      right: 10px;
+      margin-top: -10px;
+    }
+  }
+}
+.section--footer-blocks{
+	background-color: #f3f3f3;
+}

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template name="kurut">
+	<title>Kurut</title>
+	<summary>Bootstrap 3 template</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>4.0.0</version>
+	<date>2016-04-06</date>
+	<compatibility>4.0</compatibility>
+
+	<layout>
+		
+		<position menu="1" movable="0">mainmenu</position>
+
+		<position movable="0">header</position>
+		<position>teaser</position>
+		<position>verytop</position>
+		<position>top</position>
+		<position>bottom</position>
+		<position>verybottom</position>
+		<position>copyright</position>
+		
+		<section name="content">
+			<position width="9">center</position>
+			<position fixed="1">right</position>
+		</section>
+		<section name="footer-blocks">
+			<position width="3">footer1</position>
+			<position width="3">footer2</position>
+			<position width="3">footer3</position>
+			<position width="3">footer4</position>
+			
+		</section>
+	</layout>
+
+	<configgroup name="template_kurut">Template</configgroup>
+
+	<config group="template_kurut" 
+		    type="divider"
+		    order="3000">General</config>
+
+	<config group="template_kurut" 
+		    name="max_top_menu_items" 
+		    type="text" 
+		    description="Max number of items in Main Menu"
+		    order="3002">6</config>
+
+	<config group="template_kurut"
+		    name="enable_landing" 
+		    type="radio"
+		    order="3003" 
+		    values="1,0" 
+		    description="Enable landing page">0</config>
+
+	<config group="template_kurut" 
+		    name="website_bg" 
+		    type="image" 
+		    description="Header background"
+		    order="3004"><![CDATA[]]></config>
+
+	<config group="template_kurut"
+		    name="enable_text_logo" 
+		    type="radio"
+		    order="3005" 
+		    values="1,0" 
+		    description="Enable Logo text">0</config>
+	<config group="template_kurut"
+			name="logo_text"
+		    type="text" 
+		    order="3006" 
+		    show="enable_text_logo|1" 
+		    description="Logo text">kurut</config>
+
+	<config group="template_kurut" 
+		    type="divider"
+		    order="3030">Social links</config>
+	
+	<config group="template_kurut"
+			name="website_social"
+		    type="radio" 
+		    order="3031"
+		    values="1,0" 
+		    description="Show links">1</config>
+	<config group="template_kurut"
+			name="website_social_t"
+		    type="text"
+		    order="3032"
+		    show="website_social|1" 
+		    description="Twitter Link">https://twitter.com/IntelliantsLLC</config>
+	<config group="template_kurut"
+			name="website_social_f"
+		    type="text" 
+		    order="3033" 
+		    show="website_social|1" 
+		    description="Facebook Link">https://www.facebook.com/Intelliants</config>
+	<config group="template_kurut"
+			name="website_social_g"
+		    type="text" 
+		    order="3034" 
+		    show="website_social|1" 
+		    description="Google+ Link">https://plus.google.com/102500660503219569194/posts</config>
+	<config group="template_kurut"
+			name="website_social_i"
+		    type="text" 
+		    order="3035" 
+		    show="website_social|1" 
+		    description="LinkedIn Link">#</config>
+
+	<config group="template_kurut" 
+		    name="ckeditor_css" 
+		    type="hidden" 
+		    description="CKEditor CSS"
+		    order="3099">ckeditor.css</config>
+
+	<changeset>
+		<menu position="account" status="active">account</menu>
+
+		<block status="active" position="top" sticky="0" pages="index" header="0">blogroll</block>
+		<block status="active" classname="box--border">common_statistics</block>
+		<block status="active" classname="box--border">filters</block>
+	</changeset>
+
+	<blocks>
+		<block name="header" 
+			   title="Teaser block" 
+			   position="teaser" 
+			   header="0"
+			   collapsible="0" 
+			   sticky="0" 
+			   pages="index"
+			   status="active"
+			   type="html">
+			<![CDATA[
+<div class="teaser">
+	<h4>CREATE AND MANAGE CONTENT WITH EASE</h4>
+	<p>FROM THE BOX. DEAD SIMPLE.</p>
+</div>
+			]]>
+		</block>
+		
+		<block name="html_block" 
+			   title="Simple block" 
+			   position="right" 
+			   header="1"
+			   collapsible="0" 
+			   sticky="1" 
+			   status="active" 
+			   type="smarty">
+			<![CDATA[
+<p>You can change this block in admin panel. Remember, if you change template, this block will be lost. We advise you to clone this block.</p>
+			]]>
+		</block>
+		
+		
+		<block name="footer1" 
+			   title="About" 
+			   position="footer1" 
+			   header="1"
+			   collapsible="0" 
+			   sticky="1" 
+			   status="active"
+			   type="html">
+			<![CDATA[
+<p>Subrion is a free open source content management system
+that allows you to build websites for any purpose. Yes, from blog to corporate mega portal.
+Yes, from blog to corporate mega portal.</p>
+			]]>
+		</block>
+		<block name="footer2" 
+			   title="Contact" 
+			   position="footer2" 
+			   header="1"
+			   collapsible="0" 
+			   sticky="1" 
+			   status="active"
+			   type="html">
+			<![CDATA[
+<p>Subrion is a free open source content management system
+that allows you to build websites for any purpose. Yes, from blog to corporate mega portal.
+Yes, from blog to corporate mega portal.</p>
+			]]>
+		</block>
+		<block name="footer3" 
+			   title="Project" 
+			   position="footer3" 
+			   header="1"
+			   collapsible="0" 
+			   sticky="1" 
+			   status="active"
+			   type="html">
+			<![CDATA[
+<p>Subrion is a free open source content management system
+that allows you to build websites for any purpose. Yes, from blog to corporate mega portal.
+Yes, from blog to corporate mega portal.</p>
+			]]>
+		</block>
+		
+	</blocks>
+
+	<phrases>
+		<phrase category="frontend" key="login">Log in</phrase>
+		<phrase category="frontend" key="register">Sign up</phrase>
+		<phrase category="frontend" key="back_to_top">Back to top</phrase>
+		<phrase category="frontend" key="share_your_love">Share your love</phrase>
+	</phrases>
+</template>

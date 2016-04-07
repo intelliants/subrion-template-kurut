@@ -1,0 +1,42 @@
+
+//
+// Header
+// --------------------------------------------------
+
+.header {
+	background: #2d2d30 url('../img/bg.jpg') 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.teaser {
+	text-align: center;
+	padding: 80px 0;
+	
+	h4{
+		color: #fff;
+		font-size: 40px;
+	}
+	p{
+		color: #fff;
+		font-weight: 300;
+
+		.font-normalize(15px);
+
+	}
+
+	h4 {
+		.font-normalize(15px, 5px 0 0);
+	}
+
+	@media (min-width: @grid-float-breakpoint) {
+		padding: 200px 0;
+
+		h4 {
+			.font-normalize(30px);
+		}
+
+		p {
+			.font-normalize(15px, 10px 0 0);
+		}
+	}
+}

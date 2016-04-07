@@ -1,0 +1,409 @@
+
+//
+// Navbar
+// --------------------------------------------------
+
+// Default navbar
+
+.navbar-default {
+  margin-bottom: 0;
+  border: 0 none;
+
+  // toggle on mobile devices
+
+  .navbar-toggle {
+    border-color: @navbar-default-color;
+
+    .icon-bar {
+      background-color: @navbar-default-color;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: fade(@navbar-default-color, 70%);
+      background-color: fade(@navbar-default-color, 30%);
+    }
+  }
+}
+
+// brand/logo
+
+.navbar-brand {
+  text-shadow: none;
+
+  &--img {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: @navbar-height;
+    line-height: @navbar-height;
+
+    > img {
+      display: inline-block;
+      max-height: @navbar-height;
+    }
+  }
+}
+
+// Actual nav menu
+
+.navbar-nav {
+
+  > li {
+
+    > a {
+      text-shadow: none;
+    }
+
+    &.dropdown {
+      position: relative;
+
+      @media (min-width: @grid-float-breakpoint) {
+        .clearfix();
+
+        > a {
+          float: left;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  > .open > a,
+  > .active > a {
+    background-color: darken(@navbar-default-link-active-bg, 5%);
+  }
+
+  // special caret for dropdowns
+
+  &__drop {
+    color: #fff;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    @media (min-width: @grid-float-breakpoint) {
+      float: right;
+      position: relative;
+      z-index: 20;
+      cursor: pointer;
+      color: @navbar-default-link-color;
+      line-height: @navbar-height;
+      margin-left: -@navbar-padding-horizontal;
+      padding: 0;
+
+      &:hover {
+        color: @navbar-default-link-hover-color;
+      }
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    > li {
+      
+      > a {
+        border-bottom: 1px solid fade(#fff, 20%);
+      }
+    }
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    > li {
+
+      > .dropdown-menu {
+        margin-top: -15px;
+        .transition(all .15s ease-in-out);
+        .opacity(0);
+        display: block;
+        visibility: hidden;
+        left: 50%;
+        width: 200px;
+        margin-left: -100px;
+        border-color: #fff;
+        border-radius: 0;
+        .box-shadow(0 0 22px rgba(0,0,0,0.5));
+
+        &:before {
+          content: '';
+          display: inline-block;
+          border-left:   7px solid transparent;
+          border-right:  7px solid transparent;
+          border-bottom: 8px solid #fff;
+          border-bottom-color: #fff;
+          position: absolute;
+          top: -7px;
+          left: 50%;
+          margin-left: -4px;
+        }
+      }
+
+      &.open > .dropdown-menu {
+        .opacity(100);
+        margin-top: 0;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+// Account nav
+
+@avatar-height: 30px;
+
+.nav-account {
+
+  img {
+    width: @avatar-height;
+    margin-right: 5px;
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    > li > a {
+      line-height: @avatar-height;
+      padding-top: ((@navbar-height - @avatar-height) / 2);
+      padding-bottom: ((@navbar-height - @avatar-height) / 2);  
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    .navbar-nav__drop {
+      line-height: @avatar-height;
+    }
+  }
+}
+
+// Undo rounded corners in static and fixed navbars
+
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  border-radius: 0;
+}
+
+// Fix active state of dropdown items in collapsed mode
+
+@media (max-width: @grid-float-breakpoint-max) {
+  .navbar .navbar-nav .open .dropdown-menu > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: #fff;
+      #gradient > .vertical(@start-color: @dropdown-link-active-bg; @end-color: darken(@dropdown-link-active-bg, 5%));
+    }
+  }
+}
+
+
+// NAVIGATION
+//---------------------------
+
+.section--navigation {
+  background-color: #fff;
+ 
+  position: relative;
+  z-index: 20;
+  .box-shadow(0 0 10px rgba(0,0,0,.3));
+ 
+
+}
+
+.brand {
+  float: left;
+  padding: 0 20px 0 0;
+  line-height: @navbar-height;
+}
+
+.nav-bar {
+  background: #fff;
+  .clearfix();
+
+  .nav-mainmenu {
+    margin-bottom: 0;
+    float: right;
+
+    > li {
+
+      > a {
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0 20px;
+        line-height: @navbar-height;
+        color: #999;
+        border-right: 1px solid #eee;
+        text-decoration: none;
+
+        &:hover {
+          color: #555;
+          background: transparent;
+        }
+
+        .caret {
+          margin-top: @navbar-height / 2 - 3;
+          border-top-color: #999;
+          border-bottom-color: #999;
+        }
+      }
+
+      &.active > a,
+      &.active > a:hover,
+      &.active > a:focus {
+        color: #000 !important;
+        background: transparent !important;
+      }
+
+      &.dropdown.open > a.dropdown-toggle {
+        background: transparent;
+        color: #555;
+        
+        > .caret {
+          border-top-color: #555;
+          border-bottom-color: #555;
+        }
+      }
+
+      &.dropdown a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  
+}
+
+// toggler for collapsed main nav
+// see responsive-navbar.less for nav-bar styles on small devices
+
+.nav-toggle {
+  line-height: @navbar-height;
+  width: @navbar-height;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  float: right;
+  color: #fff;
+  background: #fff;
+  display: none;
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.nav-bar {
+  background: #fff;
+  .clearfix();
+
+  .nav-mainmenu {
+    margin-bottom: 0;
+    float: right;
+
+    > li {
+      > a {
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0 20px;
+        line-height: @navbar-height;
+        color: @navbar-default-link-color;
+        border-right: 1px solid #eee;
+        text-decoration: none;
+
+        &:hover {
+          color: @navbar-default-link-hover-color;
+          background: @navbar-default-link-hover-bg;
+        }
+
+        .caret {
+          margin-top: @navbar-height / 2 - 3;
+          border-top-color: @navbar-default-link-color;
+          border-bottom-color: @navbar-default-link-color;
+        }
+      }
+
+      &.active > a,
+      &.active > a:hover,
+      &.active > a:focus {
+        color: @navbar-default-link-active-color;
+        background: @navbar-default-link-active-bg;
+      }
+
+      &.dropdown.open > a.dropdown-toggle {
+        background: @navbar-default-link-hover-bg;
+        color: @navbar-default-link-hover-color;
+        
+        > .caret {
+          border-top-color: @navbar-default-link-hover-color;
+          border-bottom-color: @navbar-default-link-hover-color;
+        }
+      }
+
+      &.dropdown a {
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: @grid-float-breakpoint) {
+      float: none;
+
+      > li {
+        > a {
+          border-right: 0;
+        }
+      }
+    }
+  }
+
+  // search form in navbar
+  form {
+    .pull-right();
+    margin: 0;
+    line-height: @navbar-height - 1;
+    padding: 0 20px 0 0;
+
+    .control-group {
+      margin: 0;
+      position: relative;
+    }
+
+    input {
+      padding-right: 30px;
+    }
+
+    button {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin: -10px 5px 0 0;
+      color: @link-color;
+      border: 0 none;
+      background: none;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+    }
+  }
+}
+
+// toggler for collapsed main nav
+// see responsive-navbar.less for nav-bar styles on small devices
+
+.nav-toggle {
+  line-height: @navbar-height;
+  width: @navbar-height;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  float: right;
+  color: #fff;
+  background: @link-color;
+  display: none;
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
