@@ -1,4 +1,4 @@
-{if isset($block_blog_entries) && $block_blog_entries}
+{if !empty($block_blog_entries)}
 	<div class="ia-items blogroll">
 		{foreach $block_blog_entries as $one_blog_entry}
 			<div class="blogroll__item">
