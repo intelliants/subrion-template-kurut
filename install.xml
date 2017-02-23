@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<template name="kurut">
+<module type="template" name="kurut">
 	<title>Kurut</title>
 	<summary>Bootstrap 3 template</summary>
 	<author>Intelliants LLC</author>
 	<contributor>Intelliants LLC</contributor>
 	<version>4.0.1</version>
-	<date>2016-04-06</date>
-	<compatibility>4.0</compatibility>
+	<date>2016-03-01</date>
+	<compatibility>4.1</compatibility>
 
 	<layout>
 		
@@ -203,4 +203,4 @@ Yes, from blog to corporate mega portal.</p>
 		<phrase category="frontend" key="back_to_top">Back to top</phrase>
 		<phrase category="frontend" key="share_your_love">Share your love</phrase>
 	</phrases>
-</template>
+</module>

@@ -3,7 +3,9 @@
 		{foreach $block_blog_entries as $one_blog_entry}
 			<div class="blogroll__item">
 				{if $one_blog_entry.image}
-					<a href="{$smarty.const.IA_URL}blog/{$one_blog_entry.id}-{$one_blog_entry.alias}" class="blogroll__item__image">{printImage imgfile=$one_blog_entry.image class='media-object' title=$one_blog_entry.title fullimage=true}</a>
+					<a href="{$smarty.const.IA_URL}blog/{$one_blog_entry.id}-{$one_blog_entry.alias}" class="blogroll__item__image">
+						{ia_image file=$one_blog_entry.image title=$one_blog_entry.title class='img-responsive' type="large"}
+					</a>
 				{/if}
 
 				<div class="blogroll__item__header">

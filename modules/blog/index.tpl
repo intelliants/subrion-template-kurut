@@ -2,16 +2,16 @@
 	<p class="text-i text-fade-50">{lang key='posted_on'} {$blog_entry.date_added|date_format:$core.config.date_format} {lang key='by'} {$blog_entry.fullname}</p>
 
 	{if $blog_entry.image}
-		{printImage imgfile=$blog_entry.image fullimage=true title=$blog_entry.title|escape:'html' class='img-responsive m-b'}
+		{ia_image file=$blog_entry.image title=$blog_entry.title|escape:'html' type='large' class='img-responsive m-b'}
 	{/if}
 
 	{$blog_entry.body}
 
 	<div class="tags">
 		<span class="fa fa-tags"></span>
-		{if $tags}
+		{if $blog_tags}
 			{lang key='tags'}:
-			{foreach $tags as $tag}
+			{foreach $blog_tags as $tag}
 				<a href="{$smarty.const.IA_URL}tag/{$tag.alias}">{$tag.title|escape:'html'}</a>{if !$tag@last}, {/if}
 			{/foreach}
 		{else}
@@ -36,7 +36,9 @@
 			{foreach $blog_entries as $one_blog_entry}
 				<div class="blogroll__item">
 					{if $one_blog_entry.image}
-						<a href="{$smarty.const.IA_URL}blog/{$one_blog_entry.id}-{$one_blog_entry.alias}" class="blogroll__item__image">{printImage imgfile=$one_blog_entry.image class='media-object' title=$one_blog_entry.title fullimage=true}</a>
+						<a href="{$smarty.const.IA_URL}blog/{$one_blog_entry.id}-{$one_blog_entry.alias}" class="blogroll__item__image">
+							{ia_image file=$one_blog_entry.image title=$one_blog_entry.title class='img-responsive' type="large"}
+						</a>
 					{/if}
 
 					<div class="blogroll__item__header">
