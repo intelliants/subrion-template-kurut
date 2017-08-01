@@ -9,7 +9,7 @@
 	<compatibility>4.1</compatibility>
 
 	<layout>
-		
+		<position menu="1" movable="0">account</position>
 		<position menu="1" movable="0">mainmenu</position>
 
 		<position movable="0">header</position>
