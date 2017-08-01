@@ -55,6 +55,7 @@
 					</div>
 
 					<div class="collapse navbar-collapse nav-bar-collapse">
+						{ia_blocks block='account'}
 						{ia_blocks block='mainmenu'}
 					</div>
 				</div>
