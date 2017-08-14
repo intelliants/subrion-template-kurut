@@ -57,6 +57,8 @@
 					<div class="collapse navbar-collapse nav-bar-collapse">
 						{ia_blocks block='account'}
 						{ia_blocks block='mainmenu'}
+						{include 'language-selector.tpl'}
+						{include 'currency-selector.tpl'}
 					</div>
 				</div>
 			</div>
